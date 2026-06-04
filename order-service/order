@@ -1,0 +1,35 @@
+С учетом этих корректировками, итоговый и самый оптимальный набор полей для сущности Order в базе данных PostgreSQL будет выглядеть следующим образом:
+
+    id (UUID или Long) — уникальный идентификатор заказа.
+
+    senderLat (Double) — широта точки отправления (обязательное поле для Redis Geo).
+
+    senderLng (Double) — долгота точки отправления (обязательное поле для Redis Geo).
+
+    deliveryLat (Double) — широта точки доставки.
+
+    deliveryLng (Double) — долгота точки доставки.
+
+    comment (String, nullable) — примечание для курьера (например: "Код в подъезде 45к23", "Позвонить за 20 минут").
+
+    weight (Double) — вес груза.
+
+    volume (Double) — объем груза.
+
+    status (Enum) — текущий статус заказа (CREATED, COURIER_ASSIGNED, DELIVERING, DELIVERED, CANCELLED).
+
+    courierId (UUID/Long, nullable) — идентификатор назначенного курьера.
+
+
+
+
+
+
+
+POST /api/orders — создать заказ (Фронтенд)
+
+GET /api/orders/{id} — посмотреть свой заказ (Фронтенд)
+
+GET /api/orders — список заказов (Фронтенд/Админка)
+
+PATCH /api/orders/{id}/cancel — отменить заказ (Фронтенд)
