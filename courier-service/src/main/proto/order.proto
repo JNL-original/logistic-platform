@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package order;
+
+option java_multiple_files = true;
+option java_package = "com.jnl.orderservice.grpc";
+
+message ActiveOrdersRequest {
+  int64 courier_id = 1;
+}
+
+message ActiveOrdersResponse {
+  repeated int64 order_ids = 1;
+}
+
+service OrderGrpcService {
+  rpc GetActiveOrdersByCourier (ActiveOrdersRequest) returns (ActiveOrdersResponse);
+}
