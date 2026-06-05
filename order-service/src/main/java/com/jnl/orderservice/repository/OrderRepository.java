@@ -1,6 +1,6 @@
 package com.jnl.orderservice.repository;
 
-import com.jnl.orderservice.model.Order; // или где лежит ваша сущность
+import com.jnl.orderservice.model.Order;
 import com.jnl.orderservice.model.OrderStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

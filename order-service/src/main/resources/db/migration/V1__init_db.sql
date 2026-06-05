@@ -1,5 +1,6 @@
 CREATE TABLE orders (
     id BIGSERIAL PRIMARY KEY,
+    customer_email VARCHAR(255) NOT NULL,
     sender_lat DOUBLE PRECISION NOT NULL,
     sender_lng DOUBLE PRECISION NOT NULL,
     delivery_lat DOUBLE PRECISION NOT NULL,
@@ -12,3 +13,5 @@ CREATE TABLE orders (
 );
 
 CREATE INDEX idx_orders_courier_id ON orders(courier_id);
+
+CREATE INDEX idx_orders_customer_email ON orders(customer_email);

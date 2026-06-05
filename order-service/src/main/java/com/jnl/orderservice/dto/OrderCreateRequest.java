@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class OrderCreateRequest {
+    private String customerEmail;
     private Double senderLat;
     private Double senderLng;
     private Double deliveryLat;

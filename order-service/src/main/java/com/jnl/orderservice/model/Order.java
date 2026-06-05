@@ -18,6 +18,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "customer_email", nullable = false)
+    private String customerEmail;
+
     @Column(name = "sender_lat", nullable = false)
     private Double senderLat;
 
